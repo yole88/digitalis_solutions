@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+       <menuitem id="res_partner_menu_project"
+            parent="project.menu_main_pm"
+            action="account.res_partner_action_customer"
+            sequence="5" groups="project.group_project_manager"/>
+
+       <menuitem action="action_partner_state"
+                 id="menu_project_state_partner"
+                 parent="project.menu_project_config"
+                 groups="project.group_project_manager"
+                 sequence="10"/>
+</odoo>

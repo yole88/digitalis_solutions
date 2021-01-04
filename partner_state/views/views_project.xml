@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="project_project_views_form" model="ir.ui.view">
+        <field name="name">project.project.views.form</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/notebook/page[@name='settings']" position="after">
+                 <page name="states"  string="Partners">
+                       <field name="project_partner_ids">
+                           <tree editable="bottom">
+                                <field name="project_id" invisible="1"/>
+                                 <field name="partner_id"   options="{'no_create': True}" domain="[('customer_rank','>', 0)]"/>
+                                 <field name="state_id"  options="{'no_create': True}"/>
+                           </tree>
+                       </field>
+
+                 </page>
+            </xpath>
+             <xpath expr='//div[@name="button_box"]' position="inside">
+                   <button class="oe_stat_button" type="action" groups="project.group_project_manager"
+                            name="%(act_project_partner_bottom)d" icon="fa-pencil-square-o">
+                            <field string="Partners" name="partner_count" widget="statinfo"/>
+                   </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

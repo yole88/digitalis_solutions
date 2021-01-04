@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="states_tests" name="Partner state" inherit_id="web.assets_tests">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/crm/static/src/js/tours/partner_state.js"></script>
+        </xpath>
+    </template>
+</odoo>
